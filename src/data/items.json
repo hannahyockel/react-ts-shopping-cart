@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Watch",
+        "price": 99.97,
+        "imgUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
+    },
+    {
+        "id": 2,
+        "name": "Camera",
+        "price": 159.99,
+        "imgUrl": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": 3,
+        "name": "Paperweight",
+        "price": 39.98,
+        "imgUrl": "https://images.unsplash.com/photo-1621544170639-fb0189e518ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    }
+]
