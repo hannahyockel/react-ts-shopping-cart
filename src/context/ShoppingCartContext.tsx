@@ -10,16 +10,14 @@ type CartItem = {
 };
 
 type ShoppingCartContext = {
-  // these take ids as numbers and return nothing (void) or a number
-
-  // increment (add to cart)
-  increaseCartQuantity: (id: number) => void;
-  // decrement
+  openCart: () => void;
+  closeCart: () => void;
+  increaseCartQuantity: (id: number) => void; // add to cart
   decreaseCartQuantity: (id: number) => void;
-  // remove
   removeFromCart: (id: number) => void;
-  // get quantity
   getItemQuantity: (id: number) => number;
+  cartQuantity: number;
+  cartItems: CartItem[];
 };
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
@@ -32,13 +30,20 @@ export function useShoppingCart() {
 // implement the provider - a wrapper that gives needed values to render the shopping cart. takes in children and re-renders out those children (objects)
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
+    const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity, 0
+    )
+
+    const openCart = () => setIsOpen(true)
+    const closeCart = () => setIsOpen(false)
 
   function getItemQuantity(id: number) {
     // if this evaluates to something, get the quantity. if we have nothing, return 0
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
-
   function increaseCartQuantity(id: number) {
     setCartItems((currItems) => {
       // check if item does or does not exist in cart
@@ -57,7 +62,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       }
     });
   }
-
   function decreaseCartQuantity(id: number) {
     setCartItems((currItems) => {
       // check if item quantity is 1 and if so get rid of it
@@ -76,7 +80,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       }
     });
   }
-
   function removeFromCart(id: number) {
     setCartItems((currItems) => {
       return currItems.filter((item) => item.id !== id);
@@ -90,6 +93,10 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
+        openCart,
+        closeCart,
+        cartQuantity,
+        cartItems
       }}
     >
       {children}
