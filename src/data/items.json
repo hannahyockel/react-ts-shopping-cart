@@ -13,6 +13,18 @@
     },
     {
         "id": 3,
+        "name": "Game Console",
+        "price": 499.99,
+        "imgUrl": "https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": 4,
+        "name": "Smart Speaker",
+        "price": 59.97,
+        "imgUrl": "https://images.unsplash.com/photo-1622954174029-7aeb4f2d4775?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": 5,
         "name": "Paperweight",
         "price": 39.98,
         "imgUrl": "https://images.unsplash.com/photo-1621544170639-fb0189e518ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
