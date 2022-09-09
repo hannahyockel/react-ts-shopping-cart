@@ -32,15 +32,19 @@ export function useShoppingCart() {
 // implement the provider - a wrapper that gives needed values to render the shopping cart. takes in children and re-renders out those children (objects)
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-    const [isOpen, setIsOpen] = useState(false);
-  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", []);
+  const [isOpen, setIsOpen] = useState(false);
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+    "shopping-cart",
+    []
+  );
 
   const cartQuantity = cartItems.reduce(
-    (quantity, item) => item.quantity + quantity, 0
-    )
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
 
-    const openCart = () => setIsOpen(true)
-    const closeCart = () => setIsOpen(false)
+  const openCart = () => setIsOpen(true);
+  const closeCart = () => setIsOpen(false);
 
   function getItemQuantity(id: number) {
     // if this evaluates to something, get the quantity. if we have nothing, return 0
@@ -98,7 +102,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         openCart,
         closeCart,
         cartQuantity,
-        cartItems
+        cartItems,
       }}
     >
       {children}

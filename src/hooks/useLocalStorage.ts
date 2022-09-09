@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 // works with generics, whatever <T> is, and the different prop values, initialValue is either type of T or a function that returns type of T
@@ -9,19 +8,19 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
   // gets value from local storage or just gets initialValue
   const [value, setValue] = useState<T>(() => {
     const jsonValue = localStorage.getItem(key);
-    if (jsonValue != null) return JSON.parse(jsonValue)
+    if (jsonValue != null) return JSON.parse(jsonValue);
 
     if (typeof initialValue === "function") {
-        return (initialValue as () => T)
+      return initialValue as () => T;
     } else {
-        return initialValue
+      return initialValue;
     }
-  })
+  });
 
   // store value in local storage
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value))
-  }, [key, value])
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
 
-  return [value, setValue] as [typeof value, typeof setValue]
+  return [value, setValue] as [typeof value, typeof setValue];
 }
