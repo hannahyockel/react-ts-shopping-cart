@@ -7,8 +7,8 @@ type ShoppingCartProviderProps = {
 };
 
 type CartItem = {
-  id: number;
   quantity: number;
+  id: number;
 };
 
 type ShoppingCartContext = {
