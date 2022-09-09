@@ -8,5 +8,11 @@
         "name": "getSingleItem",
         "private": false,
         "run_as_system": true
+    },
+    {
+        "name": "createItem",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
     }
 ]
