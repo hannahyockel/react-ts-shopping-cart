@@ -4,12 +4,12 @@ import { Home } from "./pages/Home";
 import { Store } from "./pages/Store";
 import { About } from "./pages/About";
 import { Navbar } from "./components/Navbar";
-import { ShoppingCartProvider } from "./context/ShoppingCartContext"
-import { SetStateAction, useEffect, useState } from 'react';
-import { IItem } from './models/item.interface';
-import { app, credentials } from './utilities/mongo.client';
-import { BSON } from 'realm-web';
-import "./main.css"
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import { SetStateAction, useEffect, useState } from "react";
+import { IItem } from "./models/item.interface";
+import { app, credentials } from "./utilities/mongo.client";
+import { BSON } from "realm-web";
+import "./main.css";
 
 function App() {
   //states goes here
@@ -30,24 +30,31 @@ function App() {
 
   return (
     <>
-    <ShoppingCartProvider>
-      <Navbar />
-      <Container className="mb-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/store" element={<Store />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-        {items &&
+      <ShoppingCartProvider>
+        <Navbar />
+        <Container className="mb-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+          {items &&
             items.map((item) => (
               <li
                 key={item._id}
-                className='border-2 p-6 mb-3 rounded-lg flex items-center'
+                className="border-2 p-6 mb-3 rounded-lg flex items-center"
               >
-                <p>{item.name}</p>
+                <p>
+                  {item.name}: {item.price}
+                </p>
+                <img
+                  src={item.imgUrl}
+                  height="200px"
+                  style={{ objectFit: "cover" }}
+                />
               </li>
             ))}
-      </Container>
+        </Container>
       </ShoppingCartProvider>
     </>
   );
