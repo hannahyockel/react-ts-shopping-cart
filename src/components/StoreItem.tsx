@@ -110,7 +110,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
                   height: "1.25rem",
                   position: "relative",
                 }}
-                className="d-inline-flex justify-content-center align-items-center"
+                className="d-inline-flex justify-content-center align-items-center hover"
                 onClick={() => removeFromCart(id)}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
