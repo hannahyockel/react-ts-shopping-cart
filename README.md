@@ -5,26 +5,14 @@
 - Vite
 - React
 - TypeScript
+- Bootstrap
 
 ## Backend
 
 MongoDB, MongoDB Realm
 
-## Installation & Usage
+## Screenshots
 
-```sh
-git clone https://github.com/hannahyockel/react-ts-shopping-cart.git
-cd react-ts-shopping-cart
-npm i
-npm run dev
-```
+<img width="1326" alt="Screen Shot 2022-09-10 at 4 27 50 AM" src="https://user-images.githubusercontent.com/88843058/189477484-118e1e3d-0ce0-4b1d-8d1b-eb3ea097febe.png">
 
-8JwHV9NudHJ5xWc6
-
-public key
-mxztbdkz
-
-private key
-5b4de0d1-c30e-45b8-b52c-e2e6d817399c
-
-"_id":{"$oid":"631ba24477a3c1cd8906d498"}
+<img width="1326" alt="Screen Shot 2022-09-10 at 4 29 16 AM" src="https://user-images.githubusercontent.com/88843058/189477517-5dfe4578-be80-44ad-b9d5-207e9b5ad2ee.png">
